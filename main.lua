@@ -5,7 +5,7 @@ local scaler = love.math.newTransform(0,0,0,1,1,0,0)
 
 
 function love.load()
-  shader = love.graphics.newShader('circulareasing.fs')
+  shader = love.graphics.newShader('circularfillet.fs')
   
 end
 
