@@ -6,7 +6,7 @@ local scaler = love.math.newTransform(0,0,0,1,1,0,0)
 
 
 function love.load()
-  shader = love.graphics.newShader('cubicpulse.fs')
+  shader = love.graphics.newShader('kynd-functions.fs')
   
 end
 
@@ -35,8 +35,8 @@ end
 
 function love.draw()
   love.graphics.setShader(shader)
-  shader:send("motion",timer)
-  shader:send("mouse",{mousex,mousey})
+  --shader:send("motion",timer)
+  --shader:send("mouse",{mousex,mousey})
   shader:send("scaler",scaler)
   love.graphics.rectangle("fill",0,0,FrameWidth,FrameHeight)
   love.graphics.setShader()
