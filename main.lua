@@ -1,12 +1,12 @@
 FrameWidth,FrameHeight = love.graphics.getDimensions()
-local timer,sign = 0,1
+local timer,sign,motion = 0,1,0
 local toggle = false
 local mousex, mousey
 local scaler = love.math.newTransform(0,0,0,1,1,0,0)
 
 
 function love.load()
-  shader = love.graphics.newShader('kynd-functions.fs')
+  shader = love.graphics.newShader('colorpractice.fs')
   
 end
 
@@ -35,7 +35,7 @@ end
 
 function love.draw()
   love.graphics.setShader(shader)
-  --shader:send("motion",timer)
+  --shader:send("motion",motion)
   --shader:send("mouse",{mousex,mousey})
   shader:send("scaler",scaler)
   love.graphics.rectangle("fill",0,0,FrameWidth,FrameHeight)
